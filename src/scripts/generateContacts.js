@@ -9,7 +9,7 @@ let existingContacts = [];
     const data = await fs.readFile(PATH_DB, 'utf-8');
     existingContacts = JSON.parse(data); 
    } catch (err){
-    throw(err)
+     if (err.code !== 'ENOENT') throw err;
    }
 
 const newContacts  = [];

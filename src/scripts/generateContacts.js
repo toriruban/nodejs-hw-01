@@ -20,7 +20,7 @@ const newContacts  = [];
 
 const updateContacts = [...existingContacts, ...newContacts];
     try {
-        await fs.writeFile(PATH_DB, JSON.stringify(updateContacts), 'utf-8');
+        await fs.writeFile(PATH_DB, JSON.stringify(updateContacts,null, 2), 'utf-8');
     } catch (err){
         throw(err);
     }

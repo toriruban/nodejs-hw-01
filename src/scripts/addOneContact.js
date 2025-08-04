@@ -14,7 +14,7 @@ export const addOneContact = async () => {
   existingContacts.push(oneContact); 
 
     try {
-        await fs.writeFile(PATH_DB, JSON.stringify(existingContacts), 'utf-8');
+        await fs.writeFile(PATH_DB, JSON.stringify(existingContacts, null, 2), 'utf-8');
     } catch (err) {
         throw (err)
     }
